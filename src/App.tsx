@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Link } from "@chakra-ui/react";
+import { RandomQuote } from "./components/RandomQuote";
+import { getRandomColor } from "./theme/colors";
+import { Col } from "./components/elements/Col";
 
-function App() {
+const App: React.FC = () => {
+  const color = getRandomColor()
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Col className="App"
+      w={'100vw'}
+      h={'100vh'}
+      bgColor={color}
+      display={'flex'}
+      justifyContent={'center'}
+      alignItems={'center'}
+      fontFamily={'Raleway, sans-serif'}
+    >
+      <RandomQuote color={color} id="quote-box" />
+      <Link href="https://codepen.io/hezag/" cursor={'pointer'} color={'#fff'}>
+        by hezag
+      </Link>
+    </Col>
   );
 }
 
