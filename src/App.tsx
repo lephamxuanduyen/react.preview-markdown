@@ -43,7 +43,7 @@ const App: React.FC = () => {
             <Text> Editor</Text>
           </Row>
           <Icon
-            as={!isPreview ? FaExpandArrowsAlt : FaCompressAlt}
+            as={!isEditor ? FaExpandArrowsAlt : FaCompressAlt}
             _hover={{ color: "#57e2b1" }}
             onClick={() => setIsEditor(!isEditor)} />
         </Row>
